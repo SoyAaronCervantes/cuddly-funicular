@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_gravity="center|center_horizontal"
+  android:orientation="horizontal"
+  tools:context=".MainActivity">
+
+  <LinearLayout
+    android:id="@+id/linearLayout__Title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:layout_marginVertical="16dp"
+    android:orientation="vertical"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="@string/form__text__addMovie"
+      android:textSize="24sp" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/linearLayout__Image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    android:gravity="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout__Title">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/form__img__profile"
+        app:srcCompat="@mipmap/ic_popcorn_foreground" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/linearLayout__input__name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="32dp"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout__Image">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout__inputText__name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="32dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:endIconMode="clear_text"
+        app:counterEnabled="true"
+        app:errorEnabled="true"
+        app:counterMaxLength="20"
+        app:helperText="Ej. Intensamente"
+        app:helperTextEnabled="true">
+
+      <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/input__text__name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="bottom"
+          android:hint="@string/form__text__nameMovie"
+          android:maxLength="20" />
+    </com.google.android.material.textfield.TextInputLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/linearLayout__form__1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="14dp"
+    android:layout_marginVertical="32dp"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout__input__name">
+
+    <LinearLayout
+      android:id="@+id/linearLayout__form__adultContent"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/textView__action__adultContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/form__movie__contentText" />
+
+      <RadioGroup
+        android:id="@+id/radioGroup__content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:ignore="NestedWeights">
+
+        <RadioButton
+          android:id="@+id/radioButton__confirmed"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/button__radio__confirm" />
+
+        <RadioButton
+          android:id="@+id/radioButton__unconfirmed"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:text="@string/button__radio__unconfirm" />
+      </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/linearLayout__form__action"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/textView__action__title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/form__movie__type" />
+
+      <com.google.android.flexbox.FlexboxLayout
+          android:id="@+id/flex__checkboxes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="8dp"
+        app:justifyContent="space_around">
+
+        <CheckBox
+          android:id="@+id/checkBox__sell"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/checkbox__type__sell" />
+
+        <CheckBox
+          android:id="@+id/checkBox__rent"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/checkbox__type__rent" />
+      </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
+  </LinearLayout>
+
+  <com.google.android.flexbox.FlexboxLayout
+      android:id="@+id/flex__genres"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      app:flexDirection="column"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="1.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout__form__1">
+
+    <TextView
+        app:layout_alignSelf="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/form__movie__rated"
+        android:textAlignment="center"/>
+
+    <Spinner
+        android:id="@+id/spinner__genres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+  </com.google.android.flexbox.FlexboxLayout>
+
+  <com.google.android.flexbox.FlexboxLayout
+      android:id="@+id/flex__button"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      app:justifyContent="center"
+      app:layout_constraintTop_toBottomOf="@+id/flex__genres">
+
+        <Button
+            android:id="@+id/button__submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit" />
+  </com.google.android.flexbox.FlexboxLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

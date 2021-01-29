@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Controles</string>
+    <string name="form__text__addMovie">Añadir Pelicula</string>
+    <string name="form__img__profile">Image Profile</string>
+    <string name="form__text__nameMovie">Nombre de la película</string>
+    <string name="form__movie__contentText">Contenido para adultos</string>
+    <string name="button__radio__confirm">Si</string>
+    <string name="button__radio__unconfirm">No</string>
+    <string name="form__movie__type">¿Qué quieres hacer?</string>
+    <string name="checkbox__type__sell">Vender</string>
+    <string name="checkbox__type__rent">Rentar</string>
+    <string name="form__movie__rated">Escoge las categorías</string>
+    <string name="submit">Enviar</string>
+</resources>
